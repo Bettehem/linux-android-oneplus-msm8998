@@ -111,3 +111,12 @@ all.config
 
 # fetched Android config fragments
 android/configs/android-*.cfg
+
+# Droidian
+/debian/*
+!/debian/source/
+!/debian/control
+!/debian/rules
+!/debian/compat
+!/debian/kernel-info.mk
+/out/
