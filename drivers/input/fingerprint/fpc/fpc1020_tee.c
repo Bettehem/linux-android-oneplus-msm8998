@@ -332,13 +332,13 @@ static ssize_t report_home_set(struct device *dev,
 	if (!strncmp(buf, "down", strlen("down")))
 	{
             input_report_key(fpc1020->input_dev,
-                            KEY_HOME, 1);
+                            KEY_LEFTMETA, 1);
             input_sync(fpc1020->input_dev);
 	}
 	else if (!strncmp(buf, "up", strlen("up")))
 	{
             input_report_key(fpc1020->input_dev,
-                            KEY_HOME, 0);
+                            KEY_LEFTMETA, 0);
             input_sync(fpc1020->input_dev);
 	}
     else if (!strncmp(buf, "timeout", strlen("timeout")))
@@ -458,7 +458,7 @@ int fpc1020_input_init(struct fpc1020_data *fpc1020)
 
 		set_bit(KEY_POWER, fpc1020->input_dev->keybit);
 		set_bit(KEY_F2, fpc1020->input_dev->keybit);
-		set_bit(KEY_HOME, fpc1020->input_dev->keybit);
+		set_bit(KEY_LEFTMETA, fpc1020->input_dev->keybit);
 		set_bit(KEY_FINGERPRINT, fpc1020->input_dev->keybit);
 
 		/*
